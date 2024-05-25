@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">bb_platform</string>
+    <string name="widget_ouc_description" translatable="false">Bb Platform</string>
 </resources>
