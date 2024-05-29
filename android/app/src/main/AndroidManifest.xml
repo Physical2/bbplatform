@@ -21,5 +21,29 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+
+      <activity android:name=".WidgetConfigurationActivity"
+        android:exported="true">
+        <intent-filter>
+          <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+        </intent-filter>
+      </activity>
+
+      <service
+        android:name="com.reactnativeandroidwidget.RNWidgetCollectionService"
+        android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <receiver
+        android:name=".widget.OUC"
+        android:exported="false"
+        android:label="Bb Platform">
+        <intent-filter>
+          <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+          <action android:name="com.bbb.WIDGET_CLICK" />
+        </intent-filter>
+        <meta-data
+          android:name="android.appwidget.provider"
+          android:resource="@xml/widgetprovider_ouc" />
+      </receiver>
+
     </application>
 </manifest>
