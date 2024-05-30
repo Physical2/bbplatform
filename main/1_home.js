@@ -7,9 +7,9 @@ import { OUCWidgetPreviewScreen } from '../widget/WidgetPreview';
 // import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
 export default class HomeScreen extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
+        this.state = {
 
         }
     }
@@ -19,10 +19,10 @@ export default class HomeScreen extends Component {
         return (
             <View>
                 <Button
-                title='通知'
-                onPress={()=>{
-                    this.props.navigation.navigate("Example")
-                }}
+                    title='通知'
+                    onPress={() => {
+                        this.props.navigation.navigate("Example")
+                    }}
                 ></Button>
                 <Text>主页</Text>
                 <OUCWidgetPreviewScreen></OUCWidgetPreviewScreen>
