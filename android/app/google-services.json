@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "363641951585",
+    "project_id": "bb-of-ouc",
+    "storage_bucket": "bb-of-ouc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363641951585:android:a4ef4970aa9c78256d2120",
+        "android_client_info": {
+          "package_name": "com.OUC"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbqAjQKAbUfSILyJnBHKTtW1X2q-xoqCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363641951585:android:1c19091a3b506ea86d2120",
+        "android_client_info": {
+          "package_name": "com.bbb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbqAjQKAbUfSILyJnBHKTtW1X2q-xoqCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363641951585:android:fd9ccd7e489653b66d2120",
+        "android_client_info": {
+          "package_name": "com.ouc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbqAjQKAbUfSILyJnBHKTtW1X2q-xoqCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
