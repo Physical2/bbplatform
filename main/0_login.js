@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, Dimensions, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Button, Text, Dimensions, TextInput, TouchableOpacity, Alert } from 'react-native';
 // import { OUCWidgetPreviewScreen } from '../widget/WidgetPreview';
 import { withNavigation } from 'react-navigation';
 
@@ -18,6 +18,21 @@ export default class LoginScreen extends Component {
             refresh: '',
             access: ''
         }
+    }
+
+    showDetails = () => {
+        Alert.alert(
+            "关于我们",
+            "爱特工作室app部欢迎你的加入~",
+            [
+                // {
+                //     text: "返回",
+                //     onPress: () => console.log("Cancel Pressed"),
+                //     // style: "cancel"
+                // },
+                { text: "OK", onPress: () => console.log("OK Pressed") }
+            ]
+        );
     }
 
     handleLogin = () => {
@@ -81,7 +96,7 @@ export default class LoginScreen extends Component {
 
                 <View style={[styles.title]}>
                     <Text style={[styles.titleText]}>
-                        欢迎使用 bb平台
+                        欢 迎 使 用 bb 平 台
                     </Text>
                 </View>
                 <View style={[styles.allInput]}>
@@ -113,10 +128,17 @@ export default class LoginScreen extends Component {
                             </Text>
                         </View>
                     </TouchableOpacity> */}
+                    <TouchableOpacity onPress={this.showDetails} style={[styles.detail]}>
+                        <View style={[styles.detailView]}>
+                            <Text style={[styles.detailText]}>
+                                关 于 我 们
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
                     <TouchableOpacity onPress={this.handleLogin} style={[styles.login]}>
                         <View style={[styles.loginView]}>
                             <Text style={[styles.loginText]}>
-                                登录
+                                登 录
                             </Text>
                         </View>
                     </TouchableOpacity>
@@ -129,46 +151,102 @@ export default class LoginScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        height: Dimensions.get('screen').height / 2,
         marginLeft: Dimensions.get('screen').width / 40,
         marginRight: Dimensions.get('screen').width / 40,
-        marginTop: Dimensions.get('screen').width / 10,
+        marginTop: Dimensions.get('screen').width / 4,
+        // marginBottom: Dimensions.get('screen').width / 9,
+        borderColor: 'gray',
+        // borderWidth: 1,
     },
     title: {
         height: Dimensions.get('screen').height / 10,
-        backgroundColor: 'blue',
+        width: Dimensions.get('screen').width / 1.2,
+        backgroundColor: '#04132c',
+        borderRadius: 20,
+        marginLeft: 'auto',
+        marginRight: 'auto'
     },
     titleText: {
         color: 'white',
         fontSize: 30,
+        lineHeight: Dimensions.get('screen').height / 10,
+        // marginLeft: Dimensions.get('screen').height / 20,
+        marginLeft: 'auto',
+        marginRight: 'auto'
     },
     allInput: {
         marginTop: Dimensions.get('screen').width / 10,
         marginLeft: Dimensions.get('screen').width / 20,
         marginRight: Dimensions.get('screen').width / 20,
+        width: Dimensions.get('screen').width / 1.5,
+        marginLeft: 'auto',
+        marginRight: 'auto'
+    },
+    nameView: {
+        marginTop: Dimensions.get('screen').height / 20,
+    },
+    nameInput: {
+        borderColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 20, // 圆角边框
+    },
+    pswView: {
+        marginTop: Dimensions.get('screen').height / 30,
+    },
+    pswInput: {
+        borderColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 20, // 圆角边框
     },
     bottomButtons: {
-        marginTop: Dimensions.get('screen').width / 8,
+        // marginTop: Dimensions.get('screen').width / 8,
         flexDirection: 'row',
+        marginTop: Dimensions.get('screen').width / 7,
+        width: Dimensions.get('screen').width / 1.2,
     },
-    register: {
-        backgroundColor: 'blue',
-        width: Dimensions.get('screen').width / 8,
-        height: Dimensions.get('screen').width / 10,
-        marginLeft: Dimensions.get('screen').width / 5,
+    // register: {
+    //     backgroundColor: '#04132c',
+    //     width: Dimensions.get('screen').width / 8,
+    //     height: Dimensions.get('screen').width / 10,
+    //     marginLeft: Dimensions.get('screen').width / 5,
 
-    },
+    // },
     // registerText: {
     //     fontSize: 17,
     //     color: 'white'
     // },
-    loginText: {
-        fontSize: 17,
-        color: 'white'
+    detail: {
+        backgroundColor: '#04132c',
+        width: Dimensions.get('screen').width / 3,
+        height: Dimensions.get('screen').width / 9,
+        borderRadius: 15,
+        marginLeft: Dimensions.get('screen').width / 9,
+    },
+    detailText: {
+        fontSize: 18,
+        color: 'white',
+        lineHeight: Dimensions.get('screen').width / 9,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     login: {
-        backgroundColor: 'blue',
-        width: Dimensions.get('screen').width / 7,
+        backgroundColor: '#04132c',
+        // color: 'white',
+        width: Dimensions.get('screen').width / 3,
         height: Dimensions.get('screen').width / 9,
-        marginLeft: Dimensions.get('screen').width / 3,
-    }
+        borderRadius: 15,
+        marginLeft: Dimensions.get('screen').width / 10,
+        // marginLeft: Dimensions.get('screen').width / 3,
+        // marginTop: Dimensions.get('screen').width / 8,
+        // marginLeft: Dimensions.get('screen').width / 3,
+        // marginRight: 'auto'
+    },
+    loginText: {
+        fontSize: 18,
+        color: 'white',
+        lineHeight: Dimensions.get('screen').width / 9,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
 })

@@ -18,7 +18,7 @@ function App({ route }) {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login" >
         {/* <Stack.Screen name="Register" component={RegisterScreen} options={{ title: '注册' }} /> */}
-        <Stack.Screen name="Login" component={LoginScreen} options={{ title: '登录' }} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{ title: '登录', headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: '首页' }} />
         <Stack.Screen name="Example" component={NoticeScreen} options={{ title: "样例" }} />
       </Stack.Navigator>
