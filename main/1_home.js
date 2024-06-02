@@ -10,7 +10,21 @@ export default class HomeScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: '123'
+            username: '123',
+            list:[
+                {
+                    "name": "第一章作业",
+                    "subject": "高等数学",
+                    "s_session_id": "123",
+                    "ddl": "2024.1.1"
+                },
+                {
+                    "name": "第3节",
+                    "subject": "大学物理",
+                    "s_session_id": "222",
+                    "ddl": "2024.2.1"
+                }
+            ],
         }
     }
 
@@ -36,6 +50,11 @@ export default class HomeScreen extends Component {
             ]
         );
     }
+
+    handlepress = (id) =>{
+        this.props.navigation.navigate("detail", {id:id})
+    }
+
     render() {
         const { username } = this.state;
         return (
@@ -48,13 +67,36 @@ export default class HomeScreen extends Component {
 
                 </View>
                 <Button
-                    title='通知'
+                    title='邮箱绑定'
                     onPress={() => {
-                        this.props.navigation.navigate("Example")
+                        this.props.navigation.navigate("Mail")
                     }}
                 ></Button>
-                <Text>主页</Text>
-                <OUCWidgetPreviewScreen></OUCWidgetPreviewScreen>
+                <View>
+                    <FlatList
+                    data={this.state.list}
+                    renderItem={({item})=>{
+                        return(
+                            <View>
+                            <TouchableOpacity
+                            onPress={()=>this.handlepress(item.s_session_id)}
+                            >
+                            <View style={{flexDirection:'row', backgroundColor:'white', borderRadius:10, marginHorizontal:10, height:80}}>
+                                <View style={{flex:3, justifyContent:'center', marginLeft:10}}>
+                                    <Text style={{fontSize:25, color:'black'}}>{item.name}</Text>
+                                    <Text>{item.subject}</Text>
+                                </View>
+                                <View style={{flex:1, justifyContent:'center'}}>
+                                    <Text style={{color:'black'}}>{item.ddl}</Text>
+                                </View>
+                            </View>
+                            </TouchableOpacity>
+                            <View style={{height:10}}></View>
+                            </View>
+                        )
+                    }}
+                    />
+                </View>
             </View>
         );
     }
