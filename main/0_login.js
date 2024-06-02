@@ -107,6 +107,7 @@ export default class LoginScreen extends Component {
                             style={[styles.nameInput]}
                             placeholder='请 输 入 学 号'
                             value={username}
+                            keyboardType='numeric'
                             onChangeText={(username) => { this.setState({ username }) }}
                         >
                         </TextInput>
