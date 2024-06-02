@@ -6,13 +6,13 @@ import { withNavigation } from 'react-navigation';
 
 
 export default class LoginScreen extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             invisible: true,
 
-            username: '123',
-            password: '123',
+            username: '',
+            password: '',
             token: '',
 
             refresh: '',
@@ -39,6 +39,8 @@ export default class LoginScreen extends Component {
         const { username, password } = this.state;
         if (username === '123' && password === '123') {
             this.props.navigation.navigate('Home', { username, password });
+        } else {
+            Alert.alert("学号/密码错误，请重新输入");
         }
 
         // // console.log('handleLogin:', username, password);
@@ -103,14 +105,15 @@ export default class LoginScreen extends Component {
                     <View style={[styles.nameView]}>
                         <TextInput
                             style={[styles.nameInput]}
-                            placeholder='用户名'
+                            placeholder='请 输 入 学 号'
                             value={username}
                             onChangeText={(username) => { this.setState({ username }) }}
-                        />
+                        >
+                        </TextInput>
                     </View>
                     <View style={[styles.pswView]}>
                         <TextInput
-                            placeholder='密码'
+                            placeholder='请 输 入 密 码'
                             value={password}
                             style={[styles.pswInput]}
                             secureTextEntry={this.state.invisible}
@@ -190,6 +193,7 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         borderRadius: 20, // 圆角边框
+        fontWeight: 'bold',
     },
     pswView: {
         marginTop: Dimensions.get('screen').height / 30,
@@ -198,6 +202,7 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         borderRadius: 20, // 圆角边框
+        fontWeight: 'bold',
     },
     bottomButtons: {
         // marginTop: Dimensions.get('screen').width / 8,
