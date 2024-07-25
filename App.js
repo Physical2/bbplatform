@@ -10,6 +10,7 @@ import HomeScreen from './main/1_home';
 import NoticeScreen from './main/notice_example';
 import MailScreen from './main/mail_connect';
 import DetailScreen from './main/detail';
+import { OUCWidgetPreviewScreen } from './widget/WidgetPreview';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,7 @@ function App({ route }) {
         <Stack.Screen name="Example" component={NoticeScreen} options={{ title: "样例" }} />
         <Stack.Screen name="Mail" component={MailScreen} options={{ title: "邮箱绑定" }} />
         <Stack.Screen name="detail" component={DetailScreen} options={{title:'详情'}}/>
+        <Stack.Screen name="Preview" component={OUCWidgetPreviewScreen} options={{title:'组件预览'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

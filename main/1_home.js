@@ -72,6 +72,12 @@ export default class HomeScreen extends Component {
                         this.props.navigation.navigate("Mail")
                     }}
                 ></Button>
+                <Button
+                    title='组件预览'
+                    onPress={() => {
+                        this.props.navigation.navigate("Preview")
+                    }}
+                ></Button>
                 <View>
                     <FlatList
                     data={this.state.list}
